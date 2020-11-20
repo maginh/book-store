@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="upload.php" method="post" name="reg" enctype="multipart/form-data">
+        Inserire titolo del libro<br>
+        <input type="text" name="title" id="title"><br>
+        Inserire la descrizione<br>
+        <input type="text" name="desc"><br>
+        Inserire la data di pubblicazione<br>
+        <input type="text" name="dataP"><br>
+        Inserire il numero di pagine<br>
+        <input type="text" name="numeroP"><br>
+        Seleziona il libro da caricare:<br>
+        <input type="file" name="file"><br><br>
+        <input type="submit" name="submit" value="Carica libro" onclick="carica()">
+
+
+    </form>
+  </body>
+</html>
+
+<script src="js/jquery-3.4.1.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="sha256.js"></script>
+<script language="javascript">
+
+</script>
+<script>
+
+    /*function controlUser(){
+      var msg="";
+      var user=document.getElementById("user").value;
+      if(user==""){
+        alert("inserire username!");
+      }else{
+        var jqxhr=$.ajax({
+          type:"POST",
+          url:"controlloUser.php",
+          data:{usr:user},
+          dataType:"html"
+        });
+
+        jqxhr.done(function(ans){
+          alert(ans);
+        }).fail(function(){
+          alert("Inserire username!!");
+        });
+      }
+
+    }*/
+
+		function carica(){
+  		/*var username=document.getElementById("username").value;
+  		var nome=document.getElementById("nome").value;
+  		var cognome=document.getElementById("cognome").value;
+  		var password=document.getElementById("password").value;
+  		var confp=document.getElementById("passw").value;
+  		var email=document.getElementById("email").value;
+      var phone=document.getElementById("phone").value;
+      var qualifica=document.getElementById("qualifica").value;*/
+
+
+  		if(reg.title.value==""){
+  			alert("Inserisci il titolo!");
+        reg.title.setFocus();
+  		}else if(reg.desc.value==""){
+        alert("Inserisci la descrizione!");
+        reg.desc.setFocus();
+      }else if(reg.dataP.value==""){
+        alert("Inserisci la data!");
+        reg.dataP.setFocus();
+      }else if(reg.numeroP.value==""){
+        alert("Inserisci il numero di pagine");
+        reg.numeroP.setFocus();
+      }else{
+
+        reg.submit();
+            /*  password=Sha256.hash(password);
+  			var parametri = "cognome="+ cognome +"&nome="+nome +"&username="+username +"&password="+password+"&email="+email;
+  			 pathSite="http://davinm01.altervista.org/JSON/sito_ordini_NEW_02/login-register/";
+              var url = pathSite+"registrazione.php?"+parametri;
+  			var xhttp = new XMLHttpRequest();
+  			xhttp.onreadystatechange=function(){
+                if(xhttp.readyState == 4 && xhttp.status == 200){
+                   var js=xhttp.responseText;
+                   var jsparse=JSON.parse(js);
+                   alert(jsparse["messaggio"]);
+
+         			 }
+              };
+  		xhttp.open("GET", url, true);
+  		xhttp.send();*/
+  		}
+	}
+
+
+    	/*function loginutente(){
+		var user=document.getElementById("usernamelogin").value;
+		var pass=document.getElementById("passwordlogin").value;
+		if(user  == "" || pass == ""){
+			alert("Devi compilare tutti i campi!");
+		}
+		else{
+            pass=Sha256.hash(pass);
+            var risposta,rispjson;
+			var parametri = "username="+user +"&password="+pass;
+			var url = "login.php?"+parametri;
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+			if (xhttp.readyState == 4){
+            if  (xhttp.status == 200){
+                risposta=xhttp.responseText;
+                rispjson=JSON.parse(risposta);
+                if (rispjson["stato"]==1 ){
+                window.localStorage.setItem("nome",rispjson["utente"]);
+                window.location.href="../philosophy-colorlib/index.html";
+                }
+			 }
+            }
+           };
+		xhttp.open("GET", url, true);
+		xhttp.send();
+		}
+	}*/
+	</script>
